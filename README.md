@@ -16,6 +16,23 @@ class Customer < ApplicationRecord
 end
 ```
 
+The `validate_attributes(record)` private method below returns an array composed of a boolean and a symbol.
+The boolean represents the validation result and the symbol represents the aggregation class name that failed validation.
+This allows us to use the same validator for multiple attributes.
+
+```ruby
+module CustomerAggregations
+  class Address < Base
+
+    private
+
+    def validate_attributes(record)
+      [record.address.city.present? && record.address.street.present?, :address]
+    end
+  end
+end
+```
+
 ```ruby
 module CustomerAggregations
   class Base < ActiveModel::Validator
