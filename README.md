@@ -1,24 +1,17 @@
-# README
+# ActiveRecord Aggregations Playground
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This repository serves as a playground for learning about Active Record aggregations and their uses. Specifically focusing on the `composed_of` macro for representing attributes as value objects. The example below demonstrates how to use this feature.
 
-Things you may want to cover:
+## Usage
 
-* Ruby version
+In an ActiveRecord model, we can use `composed_of` to define relationships with value objects:
 
-* System dependencies
+```ruby
+class Customer < ActiveRecord::Base
+  composed_of :balance, class_name: "Money", mapping: { balance: :amount }
+  composed_of :address, mapping: { address_street: :street, address_city: :city }
+end
+```
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Further information
+[ActiveRecord::Aggregations](https://api.rubyonrails.org/classes/ActiveRecord/Aggregations/ClassMethods.html)
