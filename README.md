@@ -1,6 +1,6 @@
 # ActiveRecord Aggregations Playground
 
-This repository serves as a playground for learning about Active Record Aggregations and their uses (Rails 7.0.8). Specifically focusing on the `composed_of` macro for representing attributes as value objects. The example below demonstrates how to use this feature.
+This repository serves as a playground for learning about Active Record Aggregations and their uses (Rails 7.0.8). It specifically focuses on the `composed_of` macro for representing attributes as value objects. The example below demonstrates how to use this feature.
 
 ## Usage
 
